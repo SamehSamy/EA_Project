@@ -1,12 +1,13 @@
 package app06b.domain;
 
 
+import javax.persistence.Entity;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
-
+@Entity
 public class Address {
 
 	@NotEmpty(message="String.empty")
