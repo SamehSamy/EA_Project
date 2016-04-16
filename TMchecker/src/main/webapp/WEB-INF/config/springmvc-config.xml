@@ -10,11 +10,10 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd     
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
-        
+        http://www.springframework.org/schema/context/spring-context.xsd">        
+<!--     <mvc:annotation-driven  conversion-service="conversionService" /> -->
+    <mvc:annotation-driven/>
     <context:component-scan base-package="edu.mum.jjs.controller"/>
-    <!-- <mvc:annotation-driven  conversion-service="conversionService" /> -->
-    
     <mvc:resources mapping="/css/**" location="/css/"/>
       
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -22,10 +21,10 @@
         <property name="suffix" value=".jsp"/>
     </bean>
    
-   	<bean id="validator"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="validationMessageSource" ref="messageSource" />
-	</bean>
+<!--    	<bean id="validator" -->
+<!-- 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"> -->
+<!-- 		<property name="validationMessageSource" ref="messageSource" /> -->
+<!-- 	</bean> -->
     
      <!--  <bean id="conversionService"
 		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">

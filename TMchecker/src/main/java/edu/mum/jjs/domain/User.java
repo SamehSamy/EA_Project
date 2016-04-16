@@ -1,33 +1,33 @@
 package edu.mum.jjs.domain;
 
 import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.persistence.Table;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance
+@Table(name = "USER")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.TABLE)
+	@Column(name = "UID")
 	private String uid;
-	@NotEmpty
+	@Column(name = "USER_NAME", nullable = false)
 	private String userName;
-	@NotEmpty
+	@Column(name = "PASS", nullable = false)
 	private String password;
-	@NotEmpty
+	@Column(name = "FIRST_NAME", nullable = false)
 	private String firstName;
+	@Column(name = "LAST_NAME")
 	private String lastName;
-
-	public User() {
-	}
 
 	public String getFirstName() {
 		return firstName;
@@ -47,10 +47,6 @@ public class User implements Serializable {
 
 	public String getUid() {
 		return uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
 	}
 
 	public String getUserName() {

@@ -2,19 +2,13 @@ package edu.mum.jjs.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 @Entity
-public class Student implements Serializable {
+public class Student extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "STUDENT_ID")
 	private String studentId;
-	
-	public Student() {
-	}
 
 	public String getStudentId() {
 		return studentId;
