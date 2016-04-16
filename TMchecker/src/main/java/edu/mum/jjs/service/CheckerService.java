@@ -5,7 +5,7 @@ package edu.mum.jjs.service;
 
 	public String  Appove();
 	public String Reject();
-	public String pendding();		
+		
 	   
 }
  
