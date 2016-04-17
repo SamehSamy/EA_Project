@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import edu.mum.jjs.domain.Status;
 import edu.mum.jjs.repository.AppointmentRepository;
 import edu.mum.jjs.service.CheckerService;
 
@@ -15,18 +16,17 @@ public class CheckerServiceImpl implements CheckerService {
 	AppointmentRepository appointmentRepository;
 
 	@Override
-	public String Reject() {
+	public Status Reject() {
 		// TODO Auto-generated method stub
-		return null;
+		return Status.APPROVED;
 	}
 
 	@Override
-	public String Appove() {
-     if(appointmentRepository.findByappointId(appointId)().){
-    	  
-      }
-		return null;
+	
+	public Status Appove() 
+	{		
+		//appointmentRepository.findBystartDate(("startDate")>= CURRENT_DATE);         	        
+		return Status.REJECTED;
 	}
 	
-
 }

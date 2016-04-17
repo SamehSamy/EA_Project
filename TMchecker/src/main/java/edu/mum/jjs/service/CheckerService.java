@@ -1,10 +1,12 @@
 package edu.mum.jjs.service;
 
- public interface CheckerService   
+import edu.mum.jjs.domain.Status;
+
+public interface CheckerService   
  {
 
-	public String  Appove();
-	public String Reject();
+	public Status  Appove();
+	public Status Reject();
 		
 	   
 }
