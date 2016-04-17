@@ -16,6 +16,7 @@
     
     <http>
         <intercept-url pattern="/**" method="POST" access="ROLE_ADMIN" />
+        <intercept-url pattern="/login/success/dispatch" method="GET" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/addCar" method="GET" access="ROLE_ADMIN" />
         <intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/loginfailed.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
