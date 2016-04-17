@@ -4,6 +4,7 @@
 package edu.mum.jjs.domain;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,6 +29,7 @@ public class Appointment implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "SLOT_ID")
 	private TimeSlot slot;
+	//private Calendar calendar;   i think we can use this 
 	@Enumerated
 	private Status status;
 	public Status getStatus() {
