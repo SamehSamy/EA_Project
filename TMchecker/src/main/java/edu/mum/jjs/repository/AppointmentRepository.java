@@ -14,3 +14,4 @@ import edu.mum.jjs.domain.Appointment;
 		List<Appointment> findByappointId(String appointId);
   
 	}
+

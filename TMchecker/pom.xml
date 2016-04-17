@@ -21,22 +21,22 @@
   		<version>3.1.0</version>
   		<scope>provided</scope>
   	</dependency>
-  	<dependency>
-  		<groupId>org.springframework.security</groupId>
-  		<artifactId>spring-security-config</artifactId>
-  		<version>3.1.4.RELEASE</version>
-  		<exclusions>
-  			<exclusion>
-  				<artifactId>spring-asm</artifactId>
-  				<groupId>org.springframework</groupId>
-  			</exclusion>
-  		</exclusions>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework.security</groupId>
-  		<artifactId>spring-security-web</artifactId>
-  		<version>3.1.4.RELEASE</version>
-  	</dependency>
+	 <!-- The follow 2 are required for Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>3.2.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>3.2.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>3.2.3.RELEASE</version>
+        </dependency>
   	<dependency>
   		<groupId>org.apache.commons</groupId>
   		<artifactId>commons-io</artifactId>
