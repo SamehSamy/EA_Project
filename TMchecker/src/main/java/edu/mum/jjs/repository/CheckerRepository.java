@@ -9,13 +9,10 @@ import edu.mum.jjs.domain.Checker;
 public interface CheckerRepository extends JpaRepository<Checker, Long>
 
 {
+
 	List<Checker> findAll();
 
-	Checker findBycheckerId(String checkerId);
+	Checker findByCheckerId(String checkerId);
 
-	List<Appointment> findBy(Checker checker);
-
-	void rejectAppointment(Integer id);
-
-	void approveAppointment(Appointment appointment);
+	Checker findByUserName(String userName);
 }
