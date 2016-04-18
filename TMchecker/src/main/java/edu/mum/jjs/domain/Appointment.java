@@ -35,6 +35,9 @@ public class Appointment implements Serializable {
 	public Status getStatus() {
 		return status;
 	}
+	public void setAppointId(String appointId) {
+		this.appointId = appointId;
+	}
 	public void setStatus(Status status) {
 		this.status = status;
 	}
