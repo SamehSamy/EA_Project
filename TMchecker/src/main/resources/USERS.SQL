@@ -1,0 +1,2 @@
+INSERT INTO 'tmcheck'.'user' ('DTYPE', 'UID', 'FIRST_NAME', 'LAST_NAME', 'PASS', 'USER_NAME', 'STUDENT_ID', 'EMAIL') VALUES ('Student', '1', 'Sameh', 'Abdalla', '01147185024', 'mo7a', '984932', 'society_8_group@yahoo.com');
+INSERT INTO 'tmcheck'.'user' ('DTYPE', 'UID', 'FIRST_NAME', 'LAST_NAME', 'PASS', 'USER_NAME', 'CHECKER_ID', 'EMAIL') VALUES ('Checker', '2', 'Amine', 'Khodeer', '55555', 'Amine', '984932', 'Amine@mum.edu');
