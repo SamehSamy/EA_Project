@@ -19,8 +19,8 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name = "UID")
-	private String uid;
-	@Column(name = "USER_NAME", nullable = false)
+	private Integer uid;
+	@Column(name = "USER_NAME", nullable = false, unique = true)
 	private String userName;
 	@Column(name = "PASS", nullable = false)
 	private String password;
@@ -45,7 +45,7 @@ public class User implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getUid() {
+	public Integer getUid() {
 		return uid;
 	}
 

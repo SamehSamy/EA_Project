@@ -22,7 +22,7 @@ public class Appointment implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name = "APPOINTMENT_ID")
-	private String appointId;
+	private Integer appointId;
 	@ManyToOne
 	@JoinColumn(name = "STUDENT_ID")
 	private Student student;
@@ -53,7 +53,7 @@ public class Appointment implements Serializable {
 	public void setSlot(TimeSlot slot) {
 		this.slot = slot;
 	}
-	public String getAppointId() {
+	public Integer getAppointId() {
 		return appointId;
 	}
 
