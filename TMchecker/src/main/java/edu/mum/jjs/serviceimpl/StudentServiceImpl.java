@@ -1,6 +1,5 @@
 package edu.mum.jjs.serviceimpl;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -8,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import edu.mum.jjs.domain.Appointment;
+import edu.mum.jjs.domain.Status;
+import edu.mum.jjs.domain.Student;
 import edu.mum.jjs.domain.TimeSlot;
 import edu.mum.jjs.repository.AppointmentRepository;
 import edu.mum.jjs.repository.TimeSlotRepository;
@@ -21,25 +23,19 @@ public class StudentServiceImpl implements StudentService {
 	private TimeSlotRepository timeSlotRepository;
 	@Autowired
 	private AppointmentRepository appointmentRepository;
-	private TimeSlot selectedSlot ;
-	
+
 	@Override
-	public void schedualAppointment() {
-		// create appoint	
-	}
-	
-	
-	public TimeSlot getSelectedSlot() {
-		return selectedSlot;
-	}
-
-
-	public void setSelectedSlot(TimeSlot selectedSlot) {
-		this.selectedSlot = selectedSlot;
+	public void schedualAppointment(Student student, TimeSlot timeSlot) {
+		// create an appointment
+		Appointment app = new Appointment();
+		app.setSlot(timeSlot);
+		app.setStatus(Status.PENDDING);
+		app.setStudent(student);
+		appointmentRepository.saveAndFlush(app);
 	}
 
-
-	public List<TimeSlot> retrevieAvailableSlots(){
+	@Override
+	public List<TimeSlot> retrevieAvailableSlots() {
 		return timeSlotRepository.findByStartDateAfter(new Date());
 	}
 

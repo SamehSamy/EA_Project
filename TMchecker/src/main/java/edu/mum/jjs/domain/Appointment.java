@@ -28,9 +28,9 @@ public class Appointment implements Serializable {
 	private Student student;
 	@OneToOne
 	@JoinColumn(name = "SLOT_ID")
-	private TimeSlot slot;
-	//private Calendar calendar;   i think we can use this 
+	private TimeSlot slot; 
 	@Enumerated
+	@Column(name = "STATUS")
 	private Status status;
 	public Status getStatus() {
 		return status;

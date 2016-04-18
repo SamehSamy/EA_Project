@@ -32,7 +32,6 @@ public class TimeSlot implements Serializable {
 	@Temporal(TemporalType.TIME)
 	@Column(name = "END_DATE")
 	private Date endDate;
-
 	@ManyToOne
 	@JoinColumn(name = "CHECKER_ID")
 	private Checker checker;
@@ -62,10 +61,6 @@ public class TimeSlot implements Serializable {
 	}
 
 	public String getSlotId() {
-		return slotId;
-	}
-
-	public String getStudentId() {
 		return slotId;
 	}
 

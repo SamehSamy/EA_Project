@@ -6,8 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CheckerController { 
 	    
-	@RequestMapping()
-	public String dummy(){
-		return "EmployeeForm";
+//	@RequestMapping("*")
+//	public String dummy(){
+//		return "EmployeeForm";
+//	}
+	@RequestMapping("/scheduale")
+	public String dummy2(){
+		return "scheduale";
 	}
 }

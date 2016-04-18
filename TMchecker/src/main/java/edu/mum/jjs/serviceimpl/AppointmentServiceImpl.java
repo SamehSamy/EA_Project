@@ -27,15 +27,27 @@ public class AppointmentServiceImpl implements AppointmentService {
 	public Appointment save(Appointment appointment) {
 		return appointmentRepository.save(appointment);
 	}
+// commented by Sameh to recover compilation Error
+//	@Override
+//	public List<Appointment> getAppointmentByChecker(Checker checker) {
+//		return appointmentRepository.findBy(checker);
+//	}
+//
+//	@Override
+//	public List<Appointment> getAppointmentByStudent(Student student) {
+//		return appointmentRepository.findByStudent(student);
+//	}
 
 	@Override
 	public List<Appointment> getAppointmentByChecker(Checker checker) {
-		return appointmentRepository.findBy(checker);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public List<Appointment> getAppointmentByStudent(Student student) {
-		return appointmentRepository.findByStudent(student);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

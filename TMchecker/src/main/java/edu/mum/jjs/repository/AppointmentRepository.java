@@ -16,7 +16,8 @@ import edu.mum.jjs.domain.Appointment;
 		 List<Appointment> findByappointId(String appointId);
 		 //List<Appointment> findBystartDate(Date startDate);
 		 
-		 @Query("from appointment a JOIN a.TIMESLOT.startDate>CURRENT_DATE")
-		 List<Appointment> findBystartDate(String startDate);
+//		 commented by Sameh to recover wrong query
+//		 @Query("from appointment a JOIN a.TIMESLOT.startDate>CURRENT_DATE")
+//		 List<Appointment> findBystartDate(String startDate);
 	}
 
