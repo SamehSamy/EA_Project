@@ -20,9 +20,8 @@
         <intercept-url pattern="/addCar" method="GET" access="ROLE_ADMIN" />
         <intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/loginfailed.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/**" access="ROLE_USER" method="GET" />
-        <intercept-url pattern="/**" access="ROLE_ADMIN" method="GET" />
-        <intercept-url pattern="**/rest/student/timeSlot" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/student/**" access="ROLE_USER" />
+        <intercept-url pattern="/checker/**" access="ROLE_ADMIN"/>
         <form-login login-page="/login.jsp" authentication-failure-url="/loginfailed.jsp" 
                     default-target-url="/login/success/dispatch"/>
         <logout logout-success-url="/index.jsp"/>

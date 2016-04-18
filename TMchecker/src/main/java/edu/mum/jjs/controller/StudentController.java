@@ -17,27 +17,33 @@ import edu.mum.jjs.service.StudentService;
 import edu.mum.jjs.serviceimpl.StudentServiceImpl;
 
 @Controller
+@RequestMapping("/student")
 public class StudentController {
-	StudentService studentServ = new StudentServiceImpl();
-	
-	@RequestMapping(value = "rest/checker", method = RequestMethod.GET)
-	public @ResponseBody List<Checker> retrieveSlots() {
-		List<Checker> list = new ArrayList<>();
-		Checker c = new Checker();
-		c.setFirstName("Amine");
-		c.setLastName("Kimo");
-		list.add(c);
-		return list;
-	}
+  StudentService studentServ = new StudentServiceImpl();
 
-	@RequestMapping(value = "/createAppointment", method = RequestMethod.POST)
-	public String add(Appointment appointment, BindingResult result) {
-		String view = "redirect:.";
-		if (!result.hasErrors()) {
-//			studentServ.schedualAppointment(student, timeSlot);
-		} else {
-			view = "addCar";
-		}
-		return view;
-	}
+  @RequestMapping(value = "/rest/checker", method = RequestMethod.GET)
+  public @ResponseBody List<Checker> retrieveSlots() {
+    List<Checker> list = new ArrayList<>();
+    Checker c = new Checker();
+    c.setFirstName("Amine");
+    c.setLastName("Kimo");
+    list.add(c);
+    return list;
+  }
+
+  @RequestMapping(value = "/createAppointment", method = RequestMethod.POST)
+  public String add(Appointment appointment, BindingResult result) {
+    String view = "redirect:.";
+    if (!result.hasErrors()) {
+      // studentServ.schedualAppointment(student, timeSlot);
+    } else {
+      view = "addCar";
+    }
+    return view;
+  }
+
+  @RequestMapping("/scheduale")
+  public String scheduale() {
+    return "scheduale";
+  }
 }
