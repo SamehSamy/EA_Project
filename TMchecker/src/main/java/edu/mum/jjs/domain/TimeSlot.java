@@ -22,7 +22,7 @@ public class TimeSlot implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(name = "SLOT_ID")
-	private String slotId;
+	private Integer slotId;
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE")
 	private Date date;
@@ -60,7 +60,7 @@ public class TimeSlot implements Serializable {
 		this.endDate = endDate;
 	}
 
-	public String getSlotId() {
+	public Integer getSlotId() {
 		return slotId;
 	}
 
