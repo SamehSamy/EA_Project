@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.mum.jjs.domain.Appointment;
 import edu.mum.jjs.domain.Checker;
+import edu.mum.jjs.domain.TimeSlot;
 import edu.mum.jjs.service.AppointmentService;
 import edu.mum.jjs.service.CheckerService;
 
@@ -31,23 +31,24 @@ public class CheckerController {
 		return "Listappointment";
 	}
 
+	@RequestMapping("/addChecker")
+	public String scheduale() {
+		return "checkerForm";
+	}
+
 	@RequestMapping(value = "/addChecker", method = RequestMethod.GET)
-	public String addappointment() {
+	public String addappointment(Model model, Checker checker) {
 
 		return "checkerForm";
 	}
 
 	@RequestMapping(value = "/addChecker", method = RequestMethod.POST)
-	public String submitChecker(@ModelAttribute("checkerAdd") Model model, Checker checker, BindingResult bindingResult,
+	public String submitChecker(Model model, Checker checker, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 		if (bindingResult.hasErrors()) {
 			return "checkerForm";
 		}
-//		String[] suppressedFields = bindingResult.getSuppressedFields();
-//		if (suppressedFields.length > 0) {
-//			throw new RuntimeException("Attempt to bind fields that haven't been allowed in initBinder(): "
-//					+ StringUtils.addStringToArray(suppressedFields, ", "));
-//		}
+
 		checkerService.save(checker);
 		redirectAttributes.addFlashAttribute("checkers", checker);
 
@@ -68,9 +69,9 @@ public class CheckerController {
 	}
 
 	@RequestMapping(value = "/update/{appointId}", method = RequestMethod.PUT)
-	public String modifyAppointment(@PathVariable String appointId, Appointment appointment) {
+	public String modifyAppointment(@PathVariable String appointId, Appointment appointment, TimeSlot slot) {
 
-		checkerService.modifyAppointment(appointment, "appointId");
+		checkerService.modifyAppointment(appointment, appointId, slot);
 		return "commentmodfy";
 	}
 

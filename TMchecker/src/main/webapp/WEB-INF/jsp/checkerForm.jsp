@@ -10,9 +10,13 @@
 <title> Registration Checker</title>
 </head>
 <body>
-	<%-- <form:form <%-- modelAttribute="checkerAdd" --%> action="addChecker" method="post"> --%>
+
+
+<p>heloooooooooooooo</p>
+<%-- 	<form:form modelAttribute="checkerAdd"  action="addChecker" method="post">  --%>
 	
-		<form:form action="addChecker" method="post">
+		 <form:form action="addChecker" method="post"> 
+		
 		<h2>Checker Registration</h2>
 		<form:errors path="*" cssStyle="color : red;" element="div" />
 		<table cellpadding="0" cellspacing="0" border="0" width="50%">
@@ -48,7 +52,7 @@
 				</td>
 			</tr>
 		</table>
-		
-	</form:form>
+		 
+	 </form:form> 
 </body>
 </html>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<P>Appointment Approved</P>
 </body>
 </html>

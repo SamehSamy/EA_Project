@@ -9,6 +9,9 @@
     </head>
     <body>
         <h1>Welcome checker</h1>
-        <p>Please <a href="/Tmchecker/checker/addChecker">Addmember</a>
+        <p>Please <a href="Tmchecker/checker/addChecker">Addmember</a>
+        <p>Please <a href="Tmchecker/checker/listAll">ViewList</a>
+        
+        
     </body>
 </html>

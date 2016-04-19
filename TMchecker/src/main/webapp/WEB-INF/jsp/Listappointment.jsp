@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE HTML>
 <html>
@@ -9,31 +11,29 @@
 </style>
 </head>
 <body>
-	<div id="global">
+	
 		<h2>List of Appointments</h2>
-		<table>
+	<!-- 	<h3><a href="add.html">Add More Employee</a></h3> -->
+		  <c:if test="${!empty appointment}">  
+		 
+		 <table align="left" border="1"> 
+		 
 			<tr>
-				<td><th>appointId</th>
-				
-				<td>
-				<th>status</th>
-				<td>
+				<th>appointId</th>		
+				<th>status</th>				
 				<th>date</th> 
-				<td>
 				<th>startDate</th>
-				<td>
 				<th>endDate</th>		
 			</tr>
 
 			<c:forEach var="appoint" items="${appointment}">
-				<tr>
-					<td>${appoint.appointId}</td>
-					<td>${appoint.status}</td>
-					<td>${appoint.date}</td>
-					<td>${appoint.startDate}</td>
-					<td>${appoint.endDate}</td>
-
-				</tr>
+			
+			<td><c:out value="${appoint.appointId}"/></td>
+				<td><c:out value="${appoint.status}"/></td>
+				<td><c:out value="${appoint.date}"/></td>
+				<td><c:out value="${appoint.startDate}"/></td>
+				<td><c:out value="${appoint.endDate}"/></td>
+				
 				<br>
 			</c:forEach>
 		</table>
@@ -44,6 +44,7 @@
 		<br>
 
 
-	</div>
+	
+	 </c:if>  
 </body>
 </html>

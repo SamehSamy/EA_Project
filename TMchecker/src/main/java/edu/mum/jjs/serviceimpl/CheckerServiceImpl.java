@@ -32,8 +32,8 @@ public class CheckerServiceImpl implements CheckerService {
 
 	@Override
 
-	public void modifyAppointment(Appointment appointment, String appointId) {
-		TimeSlot slot = new TimeSlot();
+	public void modifyAppointment(Appointment appointment, String appointId ,TimeSlot slot) {
+		
 		appointment.setAppointId(appointId);  //security issue
 		logger.info("Appointment  modify appointment id: " + appointment.getAppointId());
 		Appointment appointmentManaged =  appointmentRepository.findByAppointId(appointment.getAppointId());
@@ -42,9 +42,10 @@ public class CheckerServiceImpl implements CheckerService {
 			logger.info("Modify appointment ok");
 		} else
 			logger.info("Modify appointment NOT ok");
-		//slot.setDate(date);
-		//appointmentManaged.setSlot(appointment.getSlot().getStartDate());
-		appointmentManaged.setStatus(appointment.getStatus().PENDDING);
+		slot.setStartDate(slot.getStartDate());
+		appointmentManaged.setSlot(slot);
+		
+		//appointmentManaged.setStatus(appointment.getStatus().PENDDING);
 		appointmentRepository.saveAndFlush(appointment);
 
 	}
