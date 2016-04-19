@@ -32,7 +32,7 @@ public class CheckerController {
 	}
 
 	@RequestMapping(value = "/addChecker", method = RequestMethod.GET)
-	public String addappointment(@ModelAttribute("checkerAdd") Model model, Checker checker) {
+	public String addappointment() {
 
 		return "checkerForm";
 	}
