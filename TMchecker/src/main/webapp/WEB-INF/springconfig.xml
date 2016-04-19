@@ -64,7 +64,7 @@
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <beans:property name="url" value="jdbc:mysql://localhost:3306/tmcheck"/>
         <beans:property name="username" value="root"/>
-        <beans:property name="password" value="jambo211"/>
+        <beans:property name="password" value="root"/>
     </beans:bean>
     
     

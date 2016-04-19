@@ -12,6 +12,7 @@ import edu.mum.jjs.domain.Status;
 import edu.mum.jjs.domain.Student;
 import edu.mum.jjs.domain.TimeSlot;
 import edu.mum.jjs.repository.AppointmentRepository;
+import edu.mum.jjs.repository.StudentRepository;
 import edu.mum.jjs.repository.TimeSlotRepository;
 import edu.mum.jjs.service.StudentService;
 
@@ -23,7 +24,8 @@ public class StudentServiceImpl implements StudentService {
 	private TimeSlotRepository timeSlotRepository;
 	@Autowired
 	private AppointmentRepository appointmentRepository;
-
+    @Autowired
+    private StudentRepository studentRepository;
 	@Override
 	public void schedualAppointment(Student student, TimeSlot timeSlot) {
 		// create an appointment
@@ -38,5 +40,11 @@ public class StudentServiceImpl implements StudentService {
 	public List<TimeSlot> retrevieAvailableSlots() {
 		return timeSlotRepository.findByStartDateAfter(new Date());
 	}
+
+  @Override
+  public void save(Student student) {
+    // TODO Auto-generated method stub
+      studentRepository.save(student);
+  }
 
 }
