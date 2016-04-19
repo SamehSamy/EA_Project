@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,22 +32,22 @@ public class CheckerController {
 	}
 
 	@RequestMapping(value = "/addChecker", method = RequestMethod.GET)
-	public String addappointment(@ModelAttribute("checkerAdd") Model model, Checker checker) {
+	public String addappointment() {
 
 		return "checkerForm";
 	}
 
 	@RequestMapping(value = "/addChecker", method = RequestMethod.POST)
-	public String addChecker(@ModelAttribute("checkerAdd") Model model, Checker checker, BindingResult bindingResult,
+	public String submitChecker(@ModelAttribute("checkerAdd") Model model, Checker checker, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 		if (bindingResult.hasErrors()) {
 			return "checkerForm";
 		}
-		String[] suppressedFields = bindingResult.getSuppressedFields();
-		if (suppressedFields.length > 0) {
-			throw new RuntimeException("Attempt to bind fields that haven't been allowed in initBinder(): "
-					+ StringUtils.addStringToArray(suppressedFields, ", "));
-		}
+//		String[] suppressedFields = bindingResult.getSuppressedFields();
+//		if (suppressedFields.length > 0) {
+//			throw new RuntimeException("Attempt to bind fields that haven't been allowed in initBinder(): "
+//					+ StringUtils.addStringToArray(suppressedFields, ", "));
+//		}
 		checkerService.save(checker);
 		redirectAttributes.addFlashAttribute("checkers", checker);
 
