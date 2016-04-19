@@ -5,10 +5,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>JSP Page</title>
+        <title>Checkers Page</title>
     </head>
     <body>
         <h1>Welcome checker</h1>
-        <p>Please <a href="Listappointment.jsp">login</a>
+        <p>Please <a href="checkerForm.jsp">Addmember</a>
     </body>
 </html>
