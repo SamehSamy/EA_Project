@@ -4,7 +4,6 @@
 package edu.mum.jjs.domain;
 
 import java.io.Serializable;
-import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
