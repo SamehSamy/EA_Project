@@ -4,9 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Student extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@NotEmpty
 	@Column(name = "STUDENT_ID")
 	private String studentId;
 	@Column(name = "EMAIL")

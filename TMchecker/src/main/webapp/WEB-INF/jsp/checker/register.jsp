@@ -10,11 +10,12 @@
 </head>
 <body>
 	<h1 style="text-align: center"></h1>
-	<h2 style="text-align: center">Checker Register</h2>
+
 	<br>
 	<div style="margin-left: 600px;">
 		<c:choose>
 			<c:when test="${not empty Student}">
+				<h2>Student Register</h2>
 				<form:form modelAttribute="Student"
 					action="${pageContext.request.contextPath}/register/" method="post">
 				<form:errors path="*" cssStyle="color : red;" element="div" />
@@ -51,6 +52,7 @@
 			</c:when>
 	
 			<c:otherwise>
+				<h2>Checker Register</h2>
 				<form:form modelAttribute="Checker"
 					action="${pageContext.request.contextPath}/register/" method="post">
 				<form:errors path="*" cssStyle="color : red;" element="div" />

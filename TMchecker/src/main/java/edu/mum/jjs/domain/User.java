@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Inheritance
@@ -20,12 +24,16 @@ public class User implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name = "UID")
 	private Integer uid;
+	@NotEmpty
 	@Column(name = "USER_NAME", nullable = false, unique = true)
 	private String userName;
+	@NotEmpty
 	@Column(name = "PASS", nullable = false)
 	private String password;
 	@Column(name = "FIRST_NAME", nullable = false)
+	@NotEmpty
 	private String firstName;
+	@NotEmpty
 	@Column(name = "LAST_NAME")
 	private String lastName;
 
