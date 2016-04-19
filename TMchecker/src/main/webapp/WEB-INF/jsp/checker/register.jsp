@@ -10,7 +10,9 @@
 </head>
 <body>
 	<h1 style="text-align: center"></h1>
-
+	<div style="text-align: center">
+		<a href="/Tmchecker/checker/">Checker Home</a>
+	</div>	
 	<br>
 	<div style="margin-left: 600px;">
 		<c:choose>
