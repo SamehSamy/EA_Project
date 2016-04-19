@@ -9,6 +9,7 @@
     </head>
     <body>
         <h1>Welcome checker</h1>
-        <p>Please <a href="Listappointment.jsp">login</a>
+        
+        <p>Please <a href="/checker/addChecker">login</a>
     </body>
 </html>

@@ -13,17 +13,11 @@ import edu.mum.jjs.domain.Student;
 	@Repository
 	public interface AppointmentRepository extends  JpaRepository<Appointment, String> 
 	{
-<<<<<<< HEAD
 		 Appointment findByAppointId(String appointId);
-=======
 //		 List<Appointment> findByAppointId(String appointId);
->>>>>>> branch 'master' of https://github.com/SamehSamy/EA_Project.git
 		 List<Appointment> findAll();
-<<<<<<< HEAD
 		 //List<Appointment> findBy(Checker checker);
-=======
 //		 List<Appointment> findBy(Checker checker);
->>>>>>> branch 'master' of https://github.com/SamehSamy/EA_Project.git
 	      List<Appointment> findByStudent(Student student);
 	      Appointment save(Appointment appointment);
 	      //List<Appointment> findByAppointId(String appointId);
