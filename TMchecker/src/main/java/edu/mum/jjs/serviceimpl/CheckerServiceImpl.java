@@ -33,14 +33,20 @@ public class CheckerServiceImpl implements CheckerService {
 	@Override
 
 	public void modifyAppointment(Appointment appointment, String appointId) {
-		appointment.setAppointId(appointId);
-		logger.info("Appointment  modif appointment id: " + appointment.getAppointId());
-		Appointment appointmentManaged = (Appointment) appointmentRepository.findByAppointId(appointment.getAppointId());
-		appointmentRepository.saveAndFlush(appointment);
+		TimeSlot slot = new TimeSlot();
+		appointment.setAppointId(appointId);  //security issue
+		logger.info("Appointment  modify appointment id: " + appointment.getAppointId());
+		Appointment appointmentManaged =  appointmentRepository.findByAppointId(appointment.getAppointId());
+		//appointmentRepository.saveAndFlush(appointment);
 		if (appointmentManaged != null) {
 			logger.info("Modify appointment ok");
 		} else
 			logger.info("Modify appointment NOT ok");
+		//slot.setDate(date);
+		//appointmentManaged.setSlot(appointment.getSlot().getStartDate());
+		appointmentManaged.setStatus(appointment.getStatus().PENDDING);
+		appointmentRepository.saveAndFlush(appointment);
+
 	}
 
 
@@ -73,8 +79,15 @@ public class CheckerServiceImpl implements CheckerService {
 	
 
 	@Override
-	public List<TimeSlot> getAlltimeSlots() {
-		return timeSlotRepository.findAll();
+	public List<Appointment> getAllappointments() {
+		return appointmentRepository.findAll();
+	}
+
+
+	@Override
+	public Checker save(Checker checker) {
+		// TODO Auto-generated method stub
+		return (Checker)checkerRepository.save(checker);
 	}
 
 	

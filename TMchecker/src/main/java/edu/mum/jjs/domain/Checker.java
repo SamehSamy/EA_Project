@@ -18,6 +18,14 @@ public class Checker extends User implements Serializable {
 	public void setCheckerId(String checkerId) {
 		this.checkerId = checkerId;
 	}
+   User user;
 
+public User getUser() {
+	return user;
+}
+
+public void setUser(User user) {
+	this.user = user;
+}
 	
 }

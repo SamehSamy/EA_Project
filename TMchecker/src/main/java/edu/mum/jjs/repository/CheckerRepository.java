@@ -15,4 +15,7 @@ public interface CheckerRepository extends JpaRepository<Checker, Long>
 	Checker findByCheckerId(String checkerId);
 
 	Checker findByUserName(String userName);
+	
 }
+
+

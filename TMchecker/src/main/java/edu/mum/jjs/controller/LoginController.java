@@ -13,15 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/login")
 public class LoginController {
   @RequestMapping(value = "/success/dispatch", method = RequestMethod.GET)
-  public String dispatch(Model model) {
-
+  public String dispatch(Model model   ) {
+//session must be created here
+	  
+	  
+	  
     Set<String> roles = AuthorityUtils.authorityListToSet(
         SecurityContextHolder.getContext().getAuthentication().getAuthorities());
     if (roles.contains("ROLE_ADMIN")) {
       return "/checker/checkerHome";
     }
     return "/student/studentHome";
-
   }
 
 
