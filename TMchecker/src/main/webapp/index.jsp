@@ -24,7 +24,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<h1 class="brand-heading">Welcome To JJS</h1>
+						<h2 class="brand-heading">Welcome To JJS</h2>
 						<p class="intro-text">
 							free medetation check system
 						</p>
