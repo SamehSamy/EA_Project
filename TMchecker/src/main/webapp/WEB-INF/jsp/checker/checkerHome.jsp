@@ -3,12 +3,15 @@
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Checkers Page</title>
-    </head>
-    <body>
-        <h1>Welcome checker</h1>
-        <p>Please <a href="/Tmchecker/checker/addChecker">Addmember</a>
-    </body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Checkers Page</title>
+</head>
+<body>
+	<h1 style="text-align: center">Welcome checker</h1>
+	<div style="text-align: center">
+		<a href="/Tmchecker/checker/addChecker">Add Checker</a> &nbsp;&nbsp; <a
+			href="/Tmchecker/checker/addStudent">Add Student</a>
+	</div>
+</body>
 </html>

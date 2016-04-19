@@ -2,6 +2,7 @@ package edu.mum.jjs.service;
 
 import java.util.List;
 
+import edu.mum.jjs.domain.Checker;
 import edu.mum.jjs.domain.Student;
 import edu.mum.jjs.domain.TimeSlot;
 
@@ -11,4 +12,5 @@ public interface StudentService {
 
 	void schedualAppointment(Student student, TimeSlot timeSlot);
 
+	void save(Student student);
 }
