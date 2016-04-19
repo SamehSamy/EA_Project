@@ -11,7 +11,8 @@
 	<h1 style="text-align: center">Welcome checker</h1>
 	<div style="text-align: center">
 		<a href="/Tmchecker/checker/addChecker">Add Checker</a> &nbsp;&nbsp; <a
-			href="/Tmchecker/checker/addStudent">Add Student</a>
+	  	 href="/Tmchecker/checker/addStudent">Add Student</a> &nbsp;&nbsp; <a 
+		  href="/Tmchecker/checker/listAll">ViewAppointmentLists</a>  
 	</div>
 </body>
 </html>

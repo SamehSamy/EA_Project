@@ -14,11 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.mum.jjs.domain.Appointment;
 import edu.mum.jjs.domain.Checker;
-<<<<<<< HEAD
-import edu.mum.jjs.domain.TimeSlot;
-=======
 import edu.mum.jjs.domain.Student;
->>>>>>> branch 'master' of https://github.com/SamehSamy/EA_Project.git
+import edu.mum.jjs.domain.TimeSlot;
+//github.com/SamehSamy/EA_Project.git
 import edu.mum.jjs.service.AppointmentService;
 import edu.mum.jjs.service.CheckerService;
 
@@ -36,13 +34,10 @@ public class CheckerController {
     return "/checker/register";
   }
 
-
 	@RequestMapping("/addChecker")
 	public String scheduale() {
 		return "checkerForm";
 	}
-
-
 
   @RequestMapping(value = "/listAll", method = RequestMethod.GET)
   public String getAllappointments(Model model) {
@@ -51,14 +46,11 @@ public class CheckerController {
     return "Listappointment";
   }
 
-
   @RequestMapping(value = "/addChecker", method = RequestMethod.GET)
   public String checkRegister(Model model) {
     model.addAttribute("Checker", new Checker());
     return "/checker/register";
   }
-
-
 
 
   @RequestMapping(value = "/addChecker", method = RequestMethod.POST)
@@ -67,12 +59,7 @@ public class CheckerController {
     if (bindingResult.hasErrors()) {
       return "checkerForm";
     }
-    // String[] suppressedFields = bindingResult.getSuppressedFields();
-    // if (suppressedFields.length > 0) {
-    // throw new RuntimeException("Attempt to bind fields that haven't been allowed in initBinder():
-    // "
-    // + StringUtils.addStringToArray(suppressedFields, ", "));
-    // }
+    
     checkerService.save(checker);
     redirectAttributes.addFlashAttribute("checkers", checker);
 
@@ -92,8 +79,6 @@ public class CheckerController {
 
     return "commentreg";
   }
-
-
 	@RequestMapping(value = "/update/{appointId}", method = RequestMethod.PUT)
 	public String modifyAppointment(@PathVariable String appointId, Appointment appointment, TimeSlot slot) {
 		checkerService.modifyAppointment(appointment, appointId, slot);

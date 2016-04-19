@@ -14,7 +14,7 @@
 	
 		<h2>List of Appointments</h2>
 	<!-- 	<h3><a href="add.html">Add More Employee</a></h3> -->
-		  <c:if test="${!empty appointment}">  
+		<%--   <c:if test="${!empty appointment}">   --%>
 		 
 		 <table align="left" border="1"> 
 		 
@@ -28,23 +28,25 @@
 
 			<c:forEach var="appoint" items="${appointment}">
 			
-			<td><c:out value="${appoint.appointId}"/></td>
+			    <td><c:out value="${appoint.appointId}"/></td>
 				<td><c:out value="${appoint.status}"/></td>
 				<td><c:out value="${appoint.date}"/></td>
 				<td><c:out value="${appoint.startDate}"/></td>
 				<td><c:out value="${appoint.endDate}"/></td>
+				<td align="center"><a href="edit.html?id=${appoint.appointId}">approve</a> | 
+				                   <a href="delete.html?id=${appoint.appointId}">rescheduled</a></td>
 				
 				<br>
 			</c:forEach>
 		</table>
-
+     
 		<form action="approve" method="get">
-			<input id="submit" type="submit" value="approve">
+			<br><br><input id="submit" type="submit" value="approve" /> &nbsp;&nbsp;
 		</form>
-		<br>
+		
 
 
 	
-	 </c:if>  
+	<%--  </c:if>   --%>
 </body>
 </html>
