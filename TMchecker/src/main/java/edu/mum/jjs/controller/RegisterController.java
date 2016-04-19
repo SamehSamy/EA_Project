@@ -19,13 +19,13 @@ public class RegisterController {
   StudentService studentService;
   @RequestMapping(value = "/", method = RequestMethod.POST)
   public String register(Checker checker, Student student) {
-    if (checker == null && student == null)
+    if (checker.getCheckerId() == null && student.getStudentId() == null)
       return "register";
 
-    if (checker != null) {
+    if (checker.getCheckerId() != null) {
       checkerService.save(checker);
       return "redirect:/";
-    } else if (student != null) {
+    } else if (student.getStudentId() != null) {
       studentService.save(student);
       return "redirect:/";
     } else {

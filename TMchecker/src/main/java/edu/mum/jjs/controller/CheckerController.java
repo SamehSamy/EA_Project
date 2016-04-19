@@ -28,6 +28,10 @@ public class CheckerController {
   @Autowired
   AppointmentService appointmentService;
 
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  public String home(Model model) {
+    return "/checker/checkerHome";
+  }
   @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
   public String studentRegister(Model model) {
     model.addAttribute("Student", new Student());

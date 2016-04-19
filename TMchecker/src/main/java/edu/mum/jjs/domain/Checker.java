@@ -4,10 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Checker extends User implements Serializable {
 	private static final long serialVersionUID = 5784L;
+	@NotEmpty
 	@Column(name = "CHECKER_ID")
 	private String checkerId;
 
