@@ -11,9 +11,9 @@ import edu.mum.jjs.domain.Checker;
 import edu.mum.jjs.domain.Student;
 
     @Repository
-    public interface AppointmentRepository extends  JpaRepository<Appointment, String> 
+    public interface AppointmentRepository extends  JpaRepository<Appointment, Long> 
     {
-         Appointment findByAppointId(String appointId);
+         Appointment findByAppointId(Integer appointId);
 
 //       List<Appointment> findByAppointId(String appointId);
 
@@ -23,7 +23,7 @@ import edu.mum.jjs.domain.Student;
 
 //       List<Appointment> findBy(Checker checker);
 
-          List<Appointment> findByStudent(Student student);
+         //List<Appointment> findByStudent(Student student);   temporary
           Appointment save(Appointment appointment);
           //List<Appointment> findByAppointId(String appointId);
          

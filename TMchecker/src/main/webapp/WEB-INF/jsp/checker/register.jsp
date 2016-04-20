@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Artist</title>
+<title>Add Checker</title>
 </head>
 <body>
 	<h1 style="text-align: center"></h1>
@@ -17,7 +17,7 @@
 	<div style="margin-left: 600px;">
 		<c:choose>
 			<c:when test="${not empty Student}">
-				<h2>Student Register</h2>
+				<h2>Checker Register</h2>
 				<form:form modelAttribute="Student"
 					action="${pageContext.request.contextPath}/register/" method="post">
 				<form:errors path="*" cssStyle="color : red;" element="div" />

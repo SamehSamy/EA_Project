@@ -30,9 +30,9 @@ public class StudentServiceImpl implements StudentService {
 	public void schedualAppointment(Student student, TimeSlot timeSlot) {
 		// create an appointment
 		Appointment app = new Appointment();
-		app.setSlot(timeSlot);
+		//app.setSlot(timeSlot);                               //temporary
 		app.setStatus(Status.PENDDING);
-		app.setStudent(student);
+	//	app.setStudent(student);                              //temporary
 		appointmentRepository.saveAndFlush(app);
 	}
 

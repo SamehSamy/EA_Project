@@ -14,13 +14,15 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "TIMESLOT")
 public class TimeSlot implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	//@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(name = "SLOT_ID")
 	private Integer slotId;
 	@Temporal(TemporalType.DATE)
@@ -30,14 +32,27 @@ public class TimeSlot implements Serializable {
 	@Column(name = "START_DATE")
 	private Date startDate;
 	@Temporal(TemporalType.TIME)
+    //@DateTimeFormat(pattern = "MM/dd/yyyy")
 	@Column(name = "END_DATE")
-	private Date endDate;
+	private Date endDate;	
 	@ManyToOne
 	@JoinColumn(name = "CHECKER_ID")
 	private Checker checker;
 
 	public Date getDate() {
 		return date;
+	}
+
+	public Checker getChecker() {
+		return checker;
+	}
+
+	public void setChecker(Checker checker) {
+		this.checker = checker;
+	}
+
+	public void setSlotId(Integer slotId) {
+		this.slotId = slotId;
 	}
 
 	public void setDate(Date date) {

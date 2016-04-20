@@ -12,7 +12,7 @@
 <link
 	href="<c:url value="	https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />"
 	rel="stylesheet" type="text/css" />
-        <title>JSP Page</title>
+        <title>JJS Home Page</title>
     </head>
 <body>
 <nav style="text-align: right" class="navbar navbar-custom navbar-fixed-top">

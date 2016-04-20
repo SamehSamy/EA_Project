@@ -15,7 +15,7 @@ public interface CheckerService
 	void approveAppointment(Appointment appointment);
 	void penddingndAppointment(Appointment appointment);
 
-	void modifyAppointment(Appointment appointment, String appointId ,TimeSlot slot);
+	void modifyAppointment(Appointment appointment, Integer appointId ,TimeSlot slot);
 		
 	List<Appointment> getAllappointments();
 	

@@ -13,7 +13,7 @@
 	rel="stylesheet" type="text/css" />
 <link href="<c:url value="/resources/css/my.css" />"
 	rel="stylesheet" type="text/css" />
-<title>Login</title>
+<title>Login Page </title>
 </head>
 <style>
 
