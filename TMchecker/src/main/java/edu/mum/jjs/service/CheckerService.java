@@ -13,7 +13,7 @@ public interface CheckerService
 	void rejectAppointment(Appointment appointment);
 
 	void approveAppointment(Appointment appointment);
-	void penddingndAppointment(Appointment appointment);
+	
 
 	void modifyAppointment(Appointment appointment, Integer appointId ,TimeSlot slot);
 		
