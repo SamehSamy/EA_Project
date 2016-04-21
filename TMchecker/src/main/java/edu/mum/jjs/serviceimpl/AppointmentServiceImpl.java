@@ -25,20 +25,33 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 	@Override
 	public Appointment save(Appointment appointment) {
-		return appointmentRepository.save(appointment);
-	}
-
+		return appointmentRepository.save(appointment);	}
 
 	@Override
-	public List<Appointment> getAppointmentByChecker(Checker checker) {
-		// TODO Auto-generated method stub
+	public List<Appointment> getAppointmentByChecker(Checker checker) {		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public List<Appointment> getAppointmentByStudent(Student student) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void  delete(Appointment appointment) {
+		
+		appointmentRepository.delete(appointment.getAppointId());
+	}
+
+	@Override
+	public Appointment getAppointmentById(long appointId) {		
+		return (Appointment) appointmentRepository.findOne(appointId);
+	}
+
+	@Override
+	public Appointment findOne(long id) {
+		return appointmentRepository.findOne(id);
 	}
 
 }

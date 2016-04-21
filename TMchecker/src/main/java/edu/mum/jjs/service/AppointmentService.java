@@ -14,9 +14,12 @@ public interface AppointmentService {
 
 	List<Appointment> getAppointmentByChecker(Checker checker);
 
-	List<Appointment> getAppointmentByStudent(Student student);
+	List<Appointment> getAppointmentByStudent(Student student);	
+
+	public void delete(Appointment appointment );
 	
-	
+	 Appointment  getAppointmentById(long appointId);
+	public Appointment findOne(long id); 
 
 	
 

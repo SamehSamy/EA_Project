@@ -13,16 +13,12 @@ public interface CheckerService
 	void rejectAppointment(Appointment appointment);
 
 	void approveAppointment(Appointment appointment);
-	
 
-	void modifyAppointment(Appointment appointment, Integer appointId ,TimeSlot slot);
-		
 	List<Appointment> getAllappointments();
-	
+
 	Checker save(Checker checker);
 
-	
-
+	void modifyAppointment(Appointment appointment, long appointId);
 	
 	   
 }

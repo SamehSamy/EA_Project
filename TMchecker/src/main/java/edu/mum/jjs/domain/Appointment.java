@@ -10,6 +10,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,16 +28,10 @@ public class Appointment implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "APPOINTMENT_ID")
-	private Integer appointId;
-	@Column(name = "Stud_ID")
-	private String studentId;
-	@Column(name = "Stud_FName")
-	private String firstName;	
-	@Column(name = "Stud_LName")
-	private String lastName;
-//	@ManyToOne
-//	@JoinColumn(name = "STUDENT_ID")
-	//private Student student;
+	private long appointId;	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "STUDENT_ID")
+	private Student student;
 	@OneToOne
 	@JoinColumn(name = "SLOT_ID")
 	private TimeSlot slot; 
@@ -52,12 +47,7 @@ public class Appointment implements Serializable {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-//	public Student getStudent() {
-//		return student;
-//	}
-//	public void setStudent(Student student) {
-//		this.student = student;
-//	}
+
 	public TimeSlot getSlot() {
 		return slot;
 	}
@@ -65,28 +55,13 @@ public class Appointment implements Serializable {
 		this.slot = slot;
 	}
 	
-	public Integer getAppointId() {
+	public long getAppointId() {
 		return appointId;
 	}
-	public String getStudentId() {
-		return studentId;
-	}
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public Student getStudent() {
+		return student;
 	}
 	
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
 
 
 

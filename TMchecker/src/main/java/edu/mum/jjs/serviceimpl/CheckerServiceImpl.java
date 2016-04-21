@@ -20,83 +20,64 @@ import edu.mum.jjs.service.CheckerService;
 @Transactional
 public class CheckerServiceImpl implements CheckerService {
 	private Logger logger;
-	
 	@Autowired
 	AppointmentRepository appointmentRepository;
 	@Autowired
 	CheckerRepository checkerRepository;
-	//@Autowired
+	// @Autowired
 	TimeSlotRepository timeSlotRepository;
-	//@Autowired
+	// @Autowired
 	StudentRepository studentRepository;
 
 	@Override
 
-	public void modifyAppointment(Appointment appointment, Integer appointId ,TimeSlot slot) {
-		
-		//appointment.setAppointId(appointId);  //security issue
+	public void modifyAppointment(Appointment appointment, long appointId) {
 		logger.info("Appointment  modify appointment id: " + appointment.getAppointId());
-		Appointment appointmentManaged =  appointmentRepository.findByAppointId(appointment.getAppointId());
-		//Appointment appointmentManaged =  appointmentRepository.findByAppointId(appointment.getAppointId());
-		//appointmentRepository.saveAndFlush(appointment);
+		Appointment appointmentManaged = appointmentRepository.findOne(appointment.getAppointId());
 		if (appointmentManaged != null) {
 			logger.info("Modify appointment ok");
 		} else
 			logger.info("Modify appointment NOT ok");
-		slot.setStartDate(slot.getStartDate());
-		//appointmentManaged.setSlot(slot);  temorary 
 		
-		//appointmentManaged.setStatus(appointment.getStatus().PENDDING);
 		appointmentRepository.saveAndFlush(appointment);
-
 	}
 
-
-	@Override
-	public void rejectAppointment(Appointment appointment) {
-
-		appointment.setStatus(Status.REJECTED);
-		appointmentRepository.saveAndFlush(appointment);
-
-	}
+//	@Override
+//	public void rejectAppointment(Appointment appointment) {
+//		appointment.setStatus(Status.REJECTED);
+//		checkerRepository.delete(appointment);
+//	}
 
 	@Override
 	public void approveAppointment(Appointment appointment) {
 		appointment.setStatus(Status.APPROVED);
-		appointmentRepository.save(appointment);
+		appointmentRepository.delete(appointment);
+		appointmentRepository.saveAndFlush(appointment);
 
 	}
-
-	
 
 	@Override
 	public List<Checker> findAllChecker() {
 		return checkerRepository.findAll();
 	}
-	
 
 	@Override
 	public List<Appointment> getAllappointments() {
 		return appointmentRepository.findAll();
 	}
 
-
 	@Override
 	public Checker save(Checker checker) {
 		// TODO Auto-generated method stub
-		return (Checker)checkerRepository.save(checker);
+		return (Checker) checkerRepository.save(checker);
 	}
 
-	
-
-	
-
-	
-
-
+	@Override
+	public void rejectAppointment(Appointment appointment) {
+		appointment.setStatus(Status.REJECTED);
+     	//checkerRepository.delete(appointId);;
 	}
-
-	
-
+		
+	}
 
 

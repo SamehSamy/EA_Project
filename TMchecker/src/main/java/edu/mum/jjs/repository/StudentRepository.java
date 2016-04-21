@@ -9,7 +9,6 @@ import edu.mum.jjs.domain.Student;
 	@Repository
 	public interface StudentRepository extends  CrudRepository<Student, Long> 
 	{
-	
 		
   
 	}

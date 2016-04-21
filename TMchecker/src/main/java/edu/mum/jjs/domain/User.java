@@ -22,7 +22,7 @@ public class User implements Serializable {
 	@Column(name = "UID")
 	private Integer uid;
 	@NotEmpty
-	@Column(name = "USER_NAME", nullable = false, unique = true)
+	@Column(name = "USER_NAME", nullable = false)
 	private String userName;
 	@NotEmpty
 	@Column(name = "PASS", nullable = false)

@@ -17,12 +17,12 @@
 		
 <thead>
 			<tr>
-				<th>appointId</th>		
+				<!-- <th>appointId</th> -->		 
 				<th>status</th>	
-				<th>studentId</th>									
+				<th>studentId</th>	 								
 				 <th>firstName</th> 
 				<th>lastName</th>
-				 <th>Action</th>
+				 <th>Action</th> 
 				
 					 
 			</tr>
@@ -30,21 +30,20 @@
        
 			<c:forEach var="appoint" items="${appointment}"  >
 			<tr>
-			    <%-- <td><c:out value="${status.index + 1}"/></td> --%>
-			    <td><c:out value="${appoint.appointId}"/></td>
-				<td><c:out value="${appoint.status}"/></td>							
-			    <td><c:out value="${appoint.studentId}"/></td>
-				<td><c:out value="${appoint.firstName}"/></td>
-				<td><c:out value="${appoint.lastName}"/></td>
-				<%-- <td><c:out value="${appoint.date}"/></td>
+			   <%-- <td><c:out value="${appoint.appointId}"/></td>  --%>
+				<td><c:out value="${appoint.status}"/></td>		 				
+			    <td><c:out value="${appoint.student.studentId}"/></td>
+				<td><c:out value="${appoint.student.firstName}"/></td>
+				<td><c:out value="${appoint.student.lastName}"/></td> 
+				<%-- <%-- <td><c:out value="${appoint.date}"/></td>
 				<td><c:out value="${appoint.startDate}"/></td>
-				<td><c:out value="${appoint.endDate}"/></td> --%>
+				<td><c:out value="${appoint.endDate}"/></td>  --%>
 				<td>
-                        <a href="/Tmchecker/checker/approve">Approve</a>
+                        <a href="/Tmchecker/checker/approve/${appoint.appointId}">Approve</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/Tmchecker/checker/reject">Reject</a>                        
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/Tmchecker/checker/update/{appointId}">Reschedule</a>
+                        <%-- <a href="/Tmchecker/checker/reject?id=${appoint.appointId}">Reject</a>    --%>                     
+                       <!--  &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/Tmchecker/checker/update/{appointId}">Reschedule</a> -->
                         
                     </td>
 				</tr>
